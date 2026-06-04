@@ -1,564 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gadmasters — Computadoras &amp; Tecnología</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gadmasters — Computadoras & Tecnología</title>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #007fff;          /* Fondo principal */
-            --accent: #3d4fa0;
-            --white: #ffffff;
-            --offwhite: #f4f5f9;
-            --muted: #8890b0;
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Barlow', sans-serif; background: var(--offwhite); color: var(--navy); }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--navy); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); }
-
-        /* NAV */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            background: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 56px;
-            height: 66px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, .35);
-        }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .nav-logo img {
-            height: 44px;
-            object-fit: contain;
-        }
-        nav ul {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        nav ul a {
-            color: rgba(255, 255, 255, .6);
-            text-decoration: none;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 600;
-            font-size: .78rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: color .2s;
-        }
-        nav ul a:hover { color: #fff; }
-        .nav-wa {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #25D366;
-            color: #fff;
-            padding: 8px 20px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: .78rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: opacity .2s;
-        }
-        .nav-wa:hover { opacity: .85; }
-        .nav-wa svg { width: 16px; height: 16px; fill: #fff; flex-shrink: 0; }
-
-        /* HERO */
-        .hero {
-            background: var(--navy);
-            min-height: 90vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 80px 80px 60px;
-            gap: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(61, 79, 160, .35) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 15% 80%, rgba(61, 79, 160, .18) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .hero-text { position: relative; z-index: 1; }
-        .eyebrow {
-            display: inline-block;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: .7rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .4);
-            border: 1px solid rgba(255, 255, 255, .14);
-            padding: 4px 12px;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(3rem, 5vw, 5.5rem);
-            line-height: .95;
-            color: var(--white);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        .hero h1 em {
-            font-style: normal;
-            color: transparent;
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, .45);
-        }
-        .hero-sub {
-            color: rgba(255, 255, 255, .52);
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 1.65;
-            max-width: 400px;
-            margin-bottom: 36px;
-        }
-        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-        .btn-p {
-            background: var(--white);
-            color: var(--navy);
-            padding: 14px 30px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: .9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform .2s, box-shadow .2s;
-            display: inline-block;
-        }
-        .btn-p:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 0, 0, .3); }
-        .btn-o {
-            background: transparent;
-            color: rgba(255, 255, 255, .7);
-            padding: 14px 30px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: .9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, .22);
-            cursor: pointer;
-            text-decoration: none;
-            transition: border-color .2s, color .2s;
-            display: inline-block;
-        }
-        .btn-o:hover { border-color: rgba(255, 255, 255, .6); color: #fff; }
-        .hero-img {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-img img {
-            width: 100%;
-            max-width: 340px;
-            animation: owlFloat 4s ease-in-out infinite;
-        }
-        @keyframes owlFloat {
-            0%, 100% { transform: translateY(0) rotate(-1deg); }
-            50% { transform: translateY(-14px) rotate(1deg); }
-        }
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 48px;
-            padding-top: 36px;
-            border-top: 1px solid rgba(255, 255, 255, .1);
-        }
-        .sv {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--white);
-        }
-        .sl {
-            font-size: .72rem;
-            color: rgba(255, 255, 255, .38);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-
-        /* STRIP */
-        .strip {
-            background: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            padding: 14px 40px;
-            flex-wrap: wrap;
-        }
-        .strip span {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 600;
-            font-size: .88rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .9);
-        }
-        .strip-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--white);
-            color: var(--navy);
-            padding: 8px 20px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: .8rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: opacity .2s;
-        }
-        .strip-link:hover { opacity: .82; }
-
-        /* PRODUCTS */
-        .products { padding: 80px; }
-        .sh { margin-bottom: 48px; }
-        .slabel {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: .7rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-        .stitle {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 2.6rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--navy);
-            line-height: 1;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 2px;
-        }
-        .card {
-            background: var(--white);
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: border-color .2s, transform .25s, box-shadow .25s;
-            overflow: hidden;
-        }
-        .card:hover {
-            border-color: var(--navy);
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(26, 31, 60, .14);
-            z-index: 2;
-            position: relative;
-        }
-        .cimg {
-            height: 190px;
-            background: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .cimg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 60% 40%, rgba(61, 79, 160, .5), transparent 65%);
-        }
-        .cicon {
-            width: 88px;
-            z-index: 1;
-            position: relative;
-        }
-        .btag {
-            position: absolute;
-            top: 13px;
-            left: 13px;
-            z-index: 3;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: .66rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 3px 9px;
-        }
-        .tnew { background: #4ade80; color: #14532d; }
-        .thot { background: #fb923c; color: #7c2d12; }
-        .tsoon { background: rgba(255, 255, 255, .14); color: rgba(255, 255, 255, .65); }
-        .cbody { padding: 22px; }
-        .ccat {
-            font-size: .68rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 5px;
-        }
-        .cname {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-        .cspecs {
-            font-size: .8rem;
-            color: var(--muted);
-            line-height: 1.65;
-            margin-bottom: 18px;
-        }
-        .cfoot {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .cprice {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1.45rem;
-            color: var(--navy);
-        }
-        .bcot {
-            background: var(--navy);
-            color: var(--white);
-            border: none;
-            padding: 9px 18px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: .78rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background .2s;
-        }
-        .bcot:hover { background: var(--accent); }
-
-        /* CONTACT */
-        #contacto {
-            background: var(--navy);
-            padding: 80px;
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 80px;
-            align-items: start;
-        }
-        .cleft h2 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--white);
-            line-height: 1;
-            margin-bottom: 14px;
-        }
-        .cleft p {
-            color: rgba(255, 255, 255, .48);
-            font-size: .9rem;
-            font-weight: 300;
-            line-height: 1.7;
-            max-width: 340px;
-            margin-bottom: 34px;
-        }
-        .cdet {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 15px;
-        }
-        .cico {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, .07);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .cico svg { width: 18px; height: 18px; fill: rgba(255, 255, 255, .65); }
-        .cico img { width: 18px; height: 18px; object-fit: contain; }
-        .ctxt {
-            color: rgba(255, 255, 255, .68);
-            font-size: .9rem;
-        }
-        .ctxt a {
-            color: rgba(255, 255, 255, .68);
-            text-decoration: none;
-        }
-        .ctxt a:hover { color: #fff; }
-        .clogobig {
-            width: 120px;
-            object-fit: contain;
-            opacity: .18;
-            margin-top: 40px;
-        }
-        .fw {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-        .fg {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .fg label {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .38);
-        }
-        .fg input,
-        .fg textarea {
-            background: rgba(255, 255, 255, .06);
-            border: 1px solid rgba(255, 255, 255, .1);
-            color: var(--white);
-            padding: 12px 14px;
-            font-family: 'Barlow', sans-serif;
-            font-size: .9rem;
-            outline: none;
-            transition: border-color .2s;
-            resize: vertical;
-        }
-        .fg input::placeholder,
-        .fg textarea::placeholder { color: rgba(255, 255, 255, .22); }
-        .fg input:focus,
-        .fg textarea:focus { border-color: rgba(255, 255, 255, .32); }
-        .bsend {
-            background: var(--white);
-            color: var(--navy);
-            border: none;
-            padding: 15px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: opacity .2s, transform .2s;
-            margin-top: 4px;
-        }
-        .bsend:hover { opacity: .88; transform: translateY(-2px); }
-        .suc {
-            display: none;
-            background: rgba(74, 222, 128, .12);
-            border: 1px solid rgba(74, 222, 128, .38);
-            color: #4ade80;
-            padding: 13px;
-            font-size: .85rem;
-            text-align: center;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #0d1020;
-            padding: 28px 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-        }
-        .footer-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        footer img.flogo {
-            height: 30px;
-            object-fit: contain;
-            opacity: .35;
-        }
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: rgba(255, 255, 255, .3);
-            text-decoration: none;
-            font-size: .75rem;
-        }
-        .footer-links a:hover { color: rgba(255, 255, 255, .55); }
-        .footer-copy {
-            color: rgba(255, 255, 255, .22);
-            font-size: .72rem;
-            letter-spacing: .4px;
-            text-align: center;
-        }
-
-        @media(max-width:900px) {
-            nav { padding: 0 24px; }
-            nav ul { display: none; }
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 50px 28px 40px;
-                text-align: center;
-            }
-            .hero-img { display: none; }
-            .hero h1 { font-size: 3rem; }
-            .hero-actions { justify-content: center; }
-            .hero-stats { justify-content: center; }
-            .products { padding: 50px 24px; }
-            #contacto {
-                grid-template-columns: 1fr;
-                padding: 50px 24px;
-                gap: 40px;
-            }
-            footer { padding: 20px 24px; }
-            .footer-top {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
     <!-- NAV -->
     <nav>
         <a class="nav-logo" href="#">
-            <img src="assets/img/gadmasters-logo.webp" alt="Gadmasters">
+            <img src="assets/img/gadmasters-logo.webp" alt="Gadmasters" />
         </a>
-        <ul>
-            <li><a href="#productos">Equipos</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#contacto">Consultas</a></li>
-            <li><a href="https://facebook.com/gadmastersoficial" target="_blank">Facebook</a></li>
-            <li><a href="https://www.tiktok.com/@gadmasters" target="_blank">TikTok</a></li>
+        <ul id="menuPrincipal">
+            <li><a href="#" data-tab="productos">Productos</a></li>
+            <li><a href="#" data-tab="ofertas">Ofertas</a></li>
+            <li><a href="#" data-tab="servicios">Servicios</a></li>
+            <li><a href="#" data-tab="terminos">Términos</a></li>
+            <li><a href="#" data-tab="contactenos">Contáctenos</a></li>
         </ul>
         <a class="nav-wa" href="https://wa.me/51921558694" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.856L.057 23.886a.5.5 0 00.611.611l6.03-1.476A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.006-1.374l-.36-.213-3.722.976.993-3.62-.234-.373A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
@@ -566,157 +27,160 @@
         </a>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- HERO (solo visible en inicio o primera carga) -->
+    <section class="hero" id="heroSection">
         <div class="hero-text">
             <span class="eyebrow">Lima, Perú · Tecnología de confianza</span>
             <h1>Equipos que<br><em>elevan</em><br>tu nivel</h1>
             <p class="hero-sub">Computadoras de alto rendimiento para trabajo, estudio y gaming. Asesoría personalizada y soporte técnico especializado.</p>
             <div class="hero-actions">
-                <a href="#productos" class="btn-p">Ver equipos →</a>
-                <a href="#catalogo" class="btn-o">Catálogo 2026</a>
-            </div>
-            <div class="hero-stats">
-                <div><div class="sv">100%</div><div class="sl">Garantizado</div></div>
-                <div><div class="sv">24h</div><div class="sl">Respuesta</div></div>
-                <div><div class="sv">Lima</div><div class="sl">Cobertura</div></div>
+                <a href="#" class="btn-p" data-tab="productos">Ver equipos →</a>
+                <a href="Catalogo.pdf" class="btn-o" target="_blank">Catálogo 2026</a>
             </div>
         </div>
         <div class="hero-img">
-            <img src="assets/img/gadmasters-owl.webp" alt="Gadmasters Owl">
+            <img src="assets/img/gadmasters-owl.webp" alt="Gadmasters Owl" />
         </div>
     </section>
 
-    <!-- CATALOG STRIP -->
-    <div class="strip" id="catalogo">
-        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:rgba(255,255,255,0.8)"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
-        <span>Catálogo Oficial Gadmasters 2026 — Actualización próximamente</span>
-        <a href="Catalogo.pdf" target="_blank" class="strip-link">
-            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:var(--navy)"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            Descargar PDF
-        </a>
-    </div>
+    <!-- CONTENEDOR DE PESTAÑAS -->
+    <main id="mainContent">
+        <!-- Pestaña: Productos -->
+        <section id="productos" class="tab-content">
+            <div class="sh">
+                <p class="slabel">Nuestros equipos</p>
+                <h2 class="stitle">Encuentra tu<br>máquina ideal</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="cimg"><span class="btag tnew">Nuevo</span><svg class="cicon" viewBox="0 0 90 70" fill="none"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="3"/><rect x="11" y="11" width="68" height="36" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="28" y="54" width="34" height="5" rx="1" fill="white"/><rect x="16" y="59" width="58" height="3" rx="1.5" fill="white"/></svg></div>
+                    <div class="cbody">
+                        <p class="ccat">Laptop · Trabajo / Diseño</p>
+                        <p class="cname">WorkPro Elite 15"</p>
+                        <p class="cspecs">Intel Core i7 12va Gen · 16GB RAM<br>512GB SSD NVMe · Win 11 Pro · FHD IPS</p>
+                        <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="mostrarCotizacion('WorkPro Elite 15')">Cotizar</button></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cimg"><span class="btag thot">Popular</span><svg class="cicon" viewBox="0 0 90 80" fill="none"><rect x="22" y="3" width="46" height="54" rx="3" stroke="white" stroke-width="3"/><rect x="29" y="10" width="32" height="28" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="30" y="57" width="30" height="4" rx="1" fill="white"/><rect x="8" y="61" width="74" height="4" rx="2" fill="white"/><rect x="10" y="65" width="14" height="10" rx="2" fill="white"/><rect x="66" y="65" width="14" height="10" rx="2" fill="white"/><rect x="24" y="68" width="42" height="7" rx="2" fill="white"/></svg></div>
+                    <div class="cbody">
+                        <p class="ccat">PC Desktop · Gaming / Productividad</p>
+                        <p class="cname">GadStation X500</p>
+                        <p class="cspecs">AMD Ryzen 5 5600X · 16GB DDR5<br>GTX 1650 4GB · 1TB SSD · Gabinete RGB</p>
+                        <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="mostrarCotizacion('GadStation X500')">Cotizar</button></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cimg"><svg class="cicon" viewBox="0 0 90 70" fill="none"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="3"/><rect x="11" y="11" width="68" height="36" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="28" y="54" width="34" height="5" rx="1" fill="white"/><rect x="16" y="59" width="58" height="3" rx="1.5" fill="white"/><circle cx="45" cy="29" r="10" stroke="white" stroke-width="2"/></svg></div>
+                    <div class="cbody">
+                        <p class="ccat">Laptop · Estudio / Oficina</p>
+                        <p class="cname">StudyBook 14"</p>
+                        <p class="cspecs">Intel Core i5 12va Gen · 8GB RAM<br>256GB SSD · Win 11 Home · Ligera 1.5kg</p>
+                        <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="mostrarCotizacion('StudyBook 14')">Cotizar</button></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cimg"><span class="btag tsoon">Próximamente</span><svg class="cicon" viewBox="0 0 90 70" fill="none" opacity="0.4"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="2.5" stroke-dasharray="6 4"/></svg></div>
+                    <div class="cbody">
+                        <p class="ccat">Especificaciones en desarrollo</p>
+                        <p class="cname">Nuevo Modelo</p>
+                        <p class="cspecs">Próxima incorporación al catálogo.<br>Escríbenos para recibir notificación.</p>
+                        <div class="cfoot"><span class="cprice">Pronto</span><button class="bcot" onclick="mostrarCotizacion('nuevo modelo')">Avisar</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- PRODUCTS -->
-    <section class="products" id="productos">
-        <div class="sh">
-            <p class="slabel">Nuestros equipos</p>
-            <h2 class="stitle">Encuentra tu<br>máquina ideal</h2>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="cimg">
-                    <span class="btag tnew">Nuevo</span>
-                    <svg class="cicon" viewBox="0 0 90 70" fill="none"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="3"/><rect x="11" y="11" width="68" height="36" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="28" y="54" width="34" height="5" rx="1" fill="white"/><rect x="16" y="59" width="58" height="3" rx="1.5" fill="white"/></svg>
+        <!-- Pestaña: Ofertas -->
+        <section id="ofertas" class="tab-content" style="display:none;">
+            <h2 class="tab-title">🔥 Ofertas especiales</h2>
+            <div class="ofertas-grid">
+                <div class="oferta-card">
+                    <h3>Laptop Gamer</h3>
+                    <p class="precio">S/ 3,999</p>
+                    <p class="precio-anterior">Antes: S/ 4,999</p>
                 </div>
-                <div class="cbody">
-                    <p class="ccat">Laptop · Trabajo / Diseño</p>
-                    <p class="cname">WorkPro Elite 15"</p>
-                    <p class="cspecs">Intel Core i7 12va Gen · 16GB RAM<br>512GB SSD NVMe · Win 11 Pro · FHD IPS</p>
-                    <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="goC('WorkPro Elite 15')">Cotizar</button></div>
+                <div class="oferta-card">
+                    <h3>Monitor 24"</h3>
+                    <p class="precio">S/ 699</p>
+                    <p class="precio-anterior">Antes: S/ 899</p>
                 </div>
-            </div>
-            <div class="card">
-                <div class="cimg">
-                    <span class="btag thot">Popular</span>
-                    <svg class="cicon" viewBox="0 0 90 80" fill="none"><rect x="22" y="3" width="46" height="54" rx="3" stroke="white" stroke-width="3"/><rect x="29" y="10" width="32" height="28" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="30" y="57" width="30" height="4" rx="1" fill="white"/><rect x="8" y="61" width="74" height="4" rx="2" fill="white"/><rect x="10" y="65" width="14" height="10" rx="2" fill="white"/><rect x="66" y="65" width="14" height="10" rx="2" fill="white"/><rect x="24" y="68" width="42" height="7" rx="2" fill="white"/></svg>
-                </div>
-                <div class="cbody">
-                    <p class="ccat">PC Desktop · Gaming / Productividad</p>
-                    <p class="cname">GadStation X500</p>
-                    <p class="cspecs">AMD Ryzen 5 5600X · 16GB DDR5<br>GTX 1650 4GB · 1TB SSD · Gabinete RGB</p>
-                    <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="goC('GadStation X500')">Cotizar</button></div>
+                <div class="oferta-card">
+                    <h3>Teclado Mecánico</h3>
+                    <p class="precio">S/ 249</p>
+                    <p class="precio-anterior">Antes: S/ 349</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="cimg">
-                    <svg class="cicon" viewBox="0 0 90 70" fill="none"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="3"/><rect x="11" y="11" width="68" height="36" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="28" y="54" width="34" height="5" rx="1" fill="white"/><rect x="16" y="59" width="58" height="3" rx="1.5" fill="white"/><circle cx="45" cy="29" r="10" stroke="white" stroke-width="2"/></svg>
-                </div>
-                <div class="cbody">
-                    <p class="ccat">Laptop · Estudio / Oficina</p>
-                    <p class="cname">StudyBook 14"</p>
-                    <p class="cspecs">Intel Core i5 12va Gen · 8GB RAM<br>256GB SSD · Win 11 Home · Ligera 1.5kg</p>
-                    <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="goC('StudyBook 14')">Cotizar</button></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cimg">
-                    <span class="btag tsoon">Próximamente</span>
-                    <svg class="cicon" viewBox="0 0 90 70" fill="none" opacity="0.4"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="2.5" stroke-dasharray="6 4"/></svg>
-                </div>
-                <div class="cbody">
-                    <p class="ccat">Especificaciones en desarrollo</p>
-                    <p class="cname">Nuevo Modelo</p>
-                    <p class="cspecs">Próxima incorporación al catálogo.<br>Escríbenos para recibir notificación.</p>
-                    <div class="cfoot"><span class="cprice">Pronto</span><button class="bcot" onclick="goC('nuevo modelo')">Avisar</button></div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section id="contacto">
-        <div class="cleft">
-            <h2>Consultas<br>&amp; cotizaciones</h2>
-            <p>Completa el formulario y te respondemos a la brevedad. También puedes escribirnos por WhatsApp o Facebook.</p>
-            <div class="cdet">
-                <div class="cico">
-                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.856L.057 23.886a.5.5 0 00.611.611l6.03-1.476A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.006-1.374l-.36-.213-3.722.976.993-3.62-.234-.373A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-                </div>
-                <div class="ctxt"><a href="https://wa.me/51921558694" target="_blank">+51 921 558 694</a></div>
+        <!-- Pestaña: Servicios -->
+        <section id="servicios" class="tab-content" style="display:none;">
+            <h2 class="tab-title">🛠️ Nuestros servicios</h2>
+            <ul class="servicios-lista">
+                <li>✅ Armado de PC a medida</li>
+                <li>✅ Mantenimiento preventivo y correctivo</li>
+                <li>✅ Instalación de software y sistemas operativos</li>
+                <li>✅ Asesoría técnica personalizada</li>
+                <li>✅ Reparación de laptops y desktops</li>
+            </ul>
+        </section>
+
+        <!-- Pestaña: Términos y Condiciones -->
+        <section id="terminos" class="tab-content" style="display:none;">
+            <h2 class="tab-title">📜 Términos y Condiciones</h2>
+            <div class="terminos-contenido">
+                <p><strong>1.</strong> Todos los productos cuentan con 1 año de garantía contra defectos de fábrica.</p>
+                <p><strong>2.</strong> Las cotizaciones tienen una validez de 7 días hábiles.</p>
+                <p><strong>3.</strong> El cliente debe verificar la compatibilidad de los componentes antes de la compra.</p>
+                <p><strong>4.</strong> Los pedidos se entregan en un plazo máximo de 48 horas en Lima Metropolitana.</p>
+                <p><strong>5.</strong> El uso de la página implica la aceptación de estos términos.</p>
             </div>
-            <div class="cdet">
-                <div class="cico">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </div>
-                <div class="ctxt"><a href="mailto:gadmasterventas@gmail.com">gadmasterventas@gmail.com</a></div>
+        </section>
+
+        <!-- Pestaña: Contáctenos -->
+        <section id="contactenos" class="tab-content" style="display:none;">
+            <div class="sh">
+                <p class="slabel">Escríbenos</p>
+                <h2 class="stitle">Contáctanos</h2>
             </div>
-            <div class="cdet">
-                <div class="cico">
-                    <svg viewBox="0 0 24 24" style="fill:rgba(255,255,255,.65)"><path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <h3>Consultas & cotizaciones</h3>
+                    <p>Completa el formulario y te respondemos a la brevedad. También puedes escribirnos por WhatsApp.</p>
+                    <div class="contacto-item">
+                        <span class="contacto-icono">📱</span>
+                        <a href="https://wa.me/51921558694" target="_blank">+51 921 558 694</a>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="contacto-icono">✉️</span>
+                        <a href="mailto:gadmasterventas@gmail.com">gadmasterventas@gmail.com</a>
+                    </div>
                 </div>
-                <div class="ctxt"><a href="https://facebook.com/gadmastergadmastersoficial" target="_blank">@gadmastersoficial</a></div>
+                <div class="fw">
+                    <div class="fg"><label>Nombre completo</label><input type="text" id="fN" placeholder="Tu nombre completo"/></div>
+                    <div class="fg"><label>WhatsApp / Teléfono</label><input type="tel" id="fP" placeholder="+51 9XX XXX XXX"/></div>
+                    <div class="fg"><label>Correo electrónico</label><input type="email" id="fE" placeholder="tucorreo@email.com"/></div>
+                    <div class="fg"><label>Mensaje o consulta</label><textarea id="fM" rows="4" placeholder="¿Qué equipo buscas o qué necesitas?"></textarea></div>
+                    <button class="bsend" onclick="sendF()">Enviar mensaje →</button>
+                    <div class="suc" id="suc">✓ Mensaje enviado correctamente.</div>
+                </div>
             </div>
-            <img class="clogobig" src="assets/img/gadmasters-logo.webp" alt="">
-        </div>
-        <div class="fw">
-            <div class="fg"><label>Nombre completo</label><input type="text" id="fN" placeholder="Tu nombre completo"/></div>
-            <div class="fg"><label>WhatsApp / Teléfono</label><input type="tel" id="fP" placeholder="+51 9XX XXX XXX"/></div>
-            <div class="fg"><label>Correo electrónico</label><input type="email" id="fE" placeholder="tucorreo@email.com"/></div>
-            <div class="fg"><label>Mensaje o consulta</label><textarea id="fM" rows="4" placeholder="¿Qué equipo buscas o qué necesitas?"></textarea></div>
-            <button class="bsend" onclick="sendF()">Enviar por WhatsApp →</button>
-            <div class="suc" id="suc">✓ ¡Redirigiendo a WhatsApp! Te respondemos pronto.</div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-top">
-            <img class="flogo" src="assets/img/gadmasters-logo.webp" alt="Gadmasters">
+            <img class="flogo" src="assets/img/gadmasters-logo.webp" alt="Gadmasters" />
             <div class="footer-links">
                 <a href="mailto:gadmasterventas@gmail.com">gadmasterventas@gmail.com</a>
                 <a href="https://wa.me/51921558694" target="_blank">+51 921 558 694</a>
-                <a href="https://github.com/doomsvylle/doomsvylle.github.io" target="_blank">Repositorio GitHub</a>
+                <a href="https://github.com/doomsvylle/doomsvylle.github.io" target="_blank">GitHub</a>
             </div>
         </div>
         <div class="footer-copy">© 2026 — Gadmasters SAC. Todos los derechos reservados.</div>
     </footer>
 
-    <script>
-        function goC(p) {
-            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => document.getElementById('fN').focus(), 700);
-        }
-        function sendF() {
-            const n = document.getElementById('fN').value.trim();
-            const p = document.getElementById('fP').value.trim();
-            const m = document.getElementById('fM').value.trim();
-            if (!n || !p) { alert('Por favor ingresa tu nombre y teléfono.'); return; }
-            const t = encodeURIComponent('Hola Gadmasters! 👋\nNombre: ' + n + '\nTeléfono: ' + p + (m ? '\nMensaje: ' + m : ''));
-            window.open('https://wa.me/51921558694?text=' + t, '_blank');
-            document.getElementById('suc').style.display = 'block';
-            setTimeout(() => document.getElementById('suc').style.display = 'none', 5000);
-        }
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
