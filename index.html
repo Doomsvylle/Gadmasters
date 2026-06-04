@@ -137,46 +137,60 @@
             </div>
         </section>
 
-        <!-- Pestaña: Contáctenos -->
-        <section id="contactenos" class="tab-content" style="display:none;">
-            <div class="sh">
-                <p class="slabel">Escríbenos</p>
-                <h2 class="stitle">Contáctanos</h2>
+<!-- Pestaña: Contáctenos -->
+<section id="contactenos" class="tab-content" style="display:none;">
+    <div class="sh">
+        <p class="slabel">Escríbenos</p>
+        <h2 class="stitle">Contáctanos</h2>
+    </div>
+    <div class="contacto-grid">
+        <div class="contacto-info">
+            <h3>Consultas & cotizaciones</h3>
+            <p>Completa el formulario y te respondemos a la brevedad. También puedes escribirnos por WhatsApp, Facebook o TikTok.</p>
+            
+            <div class="contacto-item">
+                <span class="contacto-icono">📱</span>
+                <a href="https://wa.me/51921558694" target="_blank">+51 921 558 694</a>
             </div>
-            <div class="contacto-grid">
-                <div class="contacto-info">
-                    <h3>Consultas & cotizaciones</h3>
-                    <p>Completa el formulario y te respondemos a la brevedad. También puedes escribirnos por WhatsApp.</p>
-                    <div class="contacto-item">
-                        <span class="contacto-icono">📱</span>
-                        <a href="https://wa.me/51921558694" target="_blank">+51 921 558 694</a>
-                    </div>
-                    <div class="contacto-item">
-                        <span class="contacto-icono">✉️</span>
-                        <a href="mailto:gadmasterventas@gmail.com">gadmasterventas@gmail.com</a>
-                    </div>
-                </div>
-                <div class="fw">
-                    <div class="fg"><label>Nombre completo</label><input type="text" id="fN" placeholder="Tu nombre completo"/></div>
-                    <div class="fg"><label>WhatsApp / Teléfono</label><input type="tel" id="fP" placeholder="+51 9XX XXX XXX"/></div>
-                    <div class="fg"><label>Correo electrónico</label><input type="email" id="fE" placeholder="tucorreo@email.com"/></div>
-                    <div class="fg"><label>Mensaje o consulta</label><textarea id="fM" rows="4" placeholder="¿Qué equipo buscas o qué necesitas?"></textarea></div>
-                    <button class="bsend" onclick="sendF()">Enviar mensaje →</button>
-                    <div class="suc" id="suc">✓ Mensaje enviado correctamente.</div>
-                </div>
+            <div class="contacto-item">
+                <span class="contacto-icono">✉️</span>
+                <a href="mailto:gadmasterventas@gmail.com">gadmasterventas@gmail.com</a>
             </div>
-        </section>
+            
+            <!-- ICONO DE FACEBOOK -->
+            <div class="contacto-item">
+                <span class="contacto-icono">
+                    <img src="assets/img/facebook-icon.png" alt="Facebook" width="24" height="24" style="display:block;">
+                </span>
+                <a href="https://www.facebook.com/gadmastersoficial" target="_blank">@gadmastersoficial</a>
+            </div>
+            
+            <!-- ICONO DE TIKTOK -->
+            <div class="contacto-item">
+                <span class="contacto-icono">
+                    <img src="assets/img/tiktok-icon.png" alt="TikTok" width="24" height="24" style="display:block;">
+                </span>
+                <a href="https://www.tiktok.com/@gadmasters" target="_blank">@gadmasters</a>
+            </div>
+            
+        </div>
+        <div class="fw">
+            <div class="fg"><label>Nombre completo</label><input type="text" id="fN" placeholder="Tu nombre completo"/></div>
+            <div class="fg"><label>WhatsApp / Teléfono</label><input type="tel" id="fP" placeholder="+51 9XX XXX XXX"/></div>
+            <div class="fg"><label>Correo electrónico</label><input type="email" id="fE" placeholder="tucorreo@email.com"/></div>
+            <div class="fg"><label>Mensaje o consulta</label><textarea id="fM" rows="4" placeholder="¿Qué equipo buscas o qué necesitas?"></textarea></div>
+            <button class="bsend" onclick="sendF()">Enviar mensaje →</button>
+            <div class="suc" id="suc">✓ Mensaje enviado correctamente.</div>
+        </div>
+    </div>
+</section>
     </main>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-top">
             <img class="flogo" src="assets/img/gadmasters-logo.webp" alt="Gadmasters" />
-            <div class="footer-links">
-                <a href="mailto:gadmasterventas@gmail.com">gadmasterventas@gmail.com</a>
-                <a href="https://wa.me/51921558694" target="_blank">+51 921 558 694</a>
-                <a href="https://github.com/doomsvylle/doomsvylle.github.io" target="_blank">GitHub</a>
-            </div>
+          
         </div>
         <div class="footer-copy">© 2026 — Gadmasters SAC. Todos los derechos reservados.</div>
     </footer>
