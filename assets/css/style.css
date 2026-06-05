@@ -646,17 +646,34 @@ footer img.flogo {
     width: 24px;
     height: 24px;
 }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
 
 /* ============================================
    RESPONSIVE
    ============================================ */
 @media(max-width:900px) {
-    nav {
-        padding: 0 24px;
-    }
+   .hamburger { display: flex; }
     nav ul {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        gap: 10px;
     }
+    nav ul.show { display: flex; }
+    nav ul a { text-align: center; padding: 8px 0; }
+
     .hero {
         grid-template-columns: 1fr;
         padding: 50px 28px 40px;
