@@ -78,7 +78,10 @@ function mostrarCotizacion(producto) {
             mensaje.value = `Me interesa cotizar el producto: ${producto}`;
         }
     }, 300);
-    function toggleMenu() {
-    document.querySelector('nav ul').classList.toggle('show');
+   function toggleMenu() {
+    const menu = document.querySelector('nav ul');
+    if (menu) {
+        menu.classList.toggle('show');
+    }
 }
 }
