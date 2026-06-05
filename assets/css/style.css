@@ -663,16 +663,26 @@ footer img.flogo {
    RESPONSIVE
    ============================================ */
 @media(max-width:900px) {
-   .hamburger { display: flex; }
+    .hamburger { display: flex; 
+    } /* Muestra el botón en móviles */
+    
     nav ul {
-        display: none;
+        display: none;           /* El menú está oculto por defecto */
         flex-direction: column;
         width: 100%;
         padding: 10px 0;
         gap: 10px;
     }
-    nav ul.show { display: flex; }
-    nav ul a { text-align: center; padding: 8px 0; }
+    
+    nav ul.show {
+        display: flex;           /* Se muestra al añadir la clase .show */
+    }
+    
+    nav ul a {
+        text-align: center;
+        padding: 8px 0;
+        width: 100%;
+    }
 
     .hero {
         grid-template-columns: 1fr;
