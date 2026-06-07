@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function mostrarTab(tabId) {
         tabs.forEach(tab => tab.style.display = 'none');
-        if (heroSection) heroSection.style.display = 'none';
+        //desaparece el menu principal
+        //if (heroSection) heroSection.style.display = 'none';
 
         const tab = document.getElementById(tabId);
         if (tab) tab.style.display = 'block';
