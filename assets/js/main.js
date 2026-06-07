@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ---- MENÚ HAMBURGUESA ----
     const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('nav ul');
+    
 
     if (hamburger && menu) {
         hamburger.addEventListener('click', function() {
