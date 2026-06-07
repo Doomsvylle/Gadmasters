@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('[data-tab]');
     const tabs = document.querySelectorAll('.tab-content');
     const heroSection = document.getElementById('heroSection');
-
+    const menu = document.querySelector('nav ul'); // Asegúrate de tener esta variable
+    
     function mostrarTab(tabId) {
         tabs.forEach(tab => tab.style.display = 'none');
         if (heroSection) heroSection.style.display = 'none';
@@ -16,8 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
         links.forEach(link => link.classList.remove('active'));
         const activeLink = document.querySelector(`[data-tab="${tabId}"]`);
         if (activeLink) activeLink.classList.add('active');
+         // 🟢 Cerrar el menú hamburguesa si está abierto
+        if (menu) {
+            menu.classList.remove('show');
+        }    
     }
-
+    // Cerrar el menú hamburguesa después de seleccionar una opción
+    
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
