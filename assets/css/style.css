@@ -667,10 +667,7 @@ footer img.flogo {
    RESPONSIVE
    ============================================ */
 @media(max-width:900px) {
-    
-    .hamburger { 
-        display: flex;
-     }
+       .hamburger { display: flex; }
 
     nav ul {
         display: none !important;        /* Oculto por defecto */
@@ -712,36 +709,13 @@ footer img.flogo {
     }
 
     /* Ajustes adicionales */
-    .hero {
-     grid-template-columns: 1fr; 
-     padding: 50px 28px 40px; 
-     text-align: center; 
-    }
-    .hero-img { 
-        display: none;
-    }
-    .hero h1 { 
-        font-size: 3rem; 
-    }
-    .hero-actions { 
-        justify-content: center;
-     }
-    .hero-stats { 
-        justify-content: center;
-     }
-    .tab-content { 
-        padding: 30px 16px;
-     }
-    .contacto-grid { 
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-        padding: 20px; 
-    }
-    footer { 
-        padding: 20px 24px;
-     }
-    .footer-top { 
-        flex-direction: column; 
-        align-items: center;
-         text-align: center; }
+    .hero { grid-template-columns: 1fr; padding: 50px 28px 40px; text-align: center; }
+    .hero-img { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .hero-actions { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .tab-content { padding: 30px 16px; }
+    .contacto-grid { grid-template-columns: 1fr; gap: 30px; padding: 20px; }
+    footer { padding: 20px 24px; }
+    .footer-top { flex-direction: column; align-items: center; text-align: center; }
 }
