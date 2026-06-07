@@ -615,7 +615,7 @@ nav ul a.active {
    FOOTER
    ============================================ */
 footer {
-    background: #0d1020;
+    background:  #2196f3;
     padding: 28px 80px;
     display: flex;
     flex-direction: column;
@@ -641,15 +641,16 @@ footer img.flogo {
     flex-wrap: wrap;
 }
 .footer-links a {
-    color: rgba(255, 255, 255, .3);
+    color:  #fff;
     text-decoration: none;
     font-size: .75rem;
+    transition: opacity .2s;
 }
 .footer-links a:hover {
-    color: rgba(255, 255, 255, .55);
+    opacity: .7;
 }
 .footer-copy {
-    color: rgba(255, 255, 255, .22);
+    color: #fff;
     font-size: .72rem;
     letter-spacing: .4px;
     text-align: center;
@@ -667,34 +668,50 @@ footer img.flogo {
    ============================================ */
 @media(max-width:900px) {
     
-   .hamburger {
-        display: flex;  /* Aparece el botón */
-    }
-
+   .hamburger { display: flex; } /* Muestra el botón en móviles */
+    
     nav ul {
-        display: none;  /* Menú oculto por defecto */
+        display: none;
         flex-direction: column;
         width: 100%;
-        padding: 10px 0;
-        gap: 10px;
-        background: var(--bg-primary);
+        padding: 20px 20px; /* ✨ Más espacio a los lados y arriba/abajo */
+        gap: 5px; /* Separación entre opciones */
+        background: var(--bg-primary); /* Mismo color que la barra */
         position: absolute;
         top: 66px;
         left: 0;
         z-index: 300;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
-
+    
     nav ul.show {
-        display: flex;  /* Se muestra con la clase .show */
+        display: flex;
+    }
+    
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* ✨ Línea separadora */
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none; /* Quitar línea al último */
+    }
+    
+    nav ul a {
+        display: block; /* Ocupa todo el ancho */
+        padding: 12px 20px;
+        text-align: center;
+        font-size: .85rem;
+        color: rgba(255, 255, 255, .8);
+        transition: background .2s;
+    }
+    
+    nav ul a:hover,
+    nav ul a.active {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
     }
 
-    nav ul a {
-        text-align: center;
-        padding: 12px 0;
-        width: 100%;
-        font-size: .85rem;
-    }
 
     .hero {
         grid-template-columns: 1fr;
