@@ -81,11 +81,14 @@ function mostrarCotizacion(producto) {
 /* ============================================
    MENÚ HAMBURGUESA - Función global
    ============================================ */
-function toggleMenu() {
-    const menu = document.querySelector('nav ul');
-    if (menu) {
-        menu.classList.toggle('show');
-        }
+  // ---- MENÚ HAMBURGUESA (Segunda opción, sin onclick) ----
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            const menu = document.querySelector('nav ul');
+            if (menu) {
+                menu.classList.toggle('show');
+           }
+        });
     }
-}
-    
+} // <-- Esta es la llave de cierre correcta
