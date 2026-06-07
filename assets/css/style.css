@@ -668,82 +668,80 @@ footer img.flogo {
    ============================================ */
 @media(max-width:900px) {
     
-   .hamburger { display: flex; } /* Muestra el botón en móviles */
-    
+    .hamburger { 
+        display: flex;
+     }
+
     nav ul {
-        display: none;
-        flex-direction: column;
+        display: none !important;        /* Oculto por defecto */
+        flex-direction: column !important;
         width: 100%;
-        padding: 20px 20px; /* ✨ Más espacio a los lados y arriba/abajo */
-        gap: 5px; /* Separación entre opciones */
-        background: var(--bg-primary); /* Mismo color que la barra */
+        padding: 20px 20px;
+        gap: 5px;
+        background: var(--bg-primary);
         position: absolute;
         top: 66px;
         left: 0;
         z-index: 300;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
-    
+
     nav ul.show {
-        display: flex;
+        display: flex !important;        /* ✨ Forzamos que se muestre */
     }
-    
+
     nav ul li {
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* ✨ Línea separadora */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
-    
     nav ul li:last-child {
-        border-bottom: none; /* Quitar línea al último */
+        border-bottom: none;
     }
-    
     nav ul a {
-        display: block; /* Ocupa todo el ancho */
+        display: block;
         padding: 12px 20px;
         text-align: center;
         font-size: .85rem;
         color: rgba(255, 255, 255, .8);
         transition: background .2s;
     }
-    
     nav ul a:hover,
     nav ul a.active {
         background: rgba(255, 255, 255, 0.1);
         color: #fff;
     }
 
-
+    /* Ajustes adicionales */
     .hero {
-        grid-template-columns: 1fr;
-        padding: 50px 28px 40px;
-        text-align: center;
+     grid-template-columns: 1fr; 
+     padding: 50px 28px 40px; 
+     text-align: center; 
     }
-    .hero-img {
+    .hero-img { 
         display: none;
     }
-    .hero h1 {
-        font-size: 3rem;
+    .hero h1 { 
+        font-size: 3rem; 
     }
-    .hero-actions {
+    .hero-actions { 
         justify-content: center;
-    }
-    .hero-stats {
+     }
+    .hero-stats { 
         justify-content: center;
-    }
-    .tab-content {
+     }
+    .tab-content { 
         padding: 30px 16px;
+     }
+    .contacto-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        padding: 20px; 
     }
-    .contacto-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 20px;
-    }
-    footer {
+    footer { 
         padding: 20px 24px;
-    }
-    .footer-top {
-        flex-direction: column;
+     }
+    .footer-top { 
+        flex-direction: column; 
         align-items: center;
-        text-align: center;
-    }
+         text-align: center; }
 }
