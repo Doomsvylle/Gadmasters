@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Mostrar productos por defecto
-    mostrarTab('productos');
+    //mostrarTab('productos');
 
     // ---- MENÚ HAMBURGUESA ----
     const hamburger = document.querySelector('.hamburger');
