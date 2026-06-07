@@ -83,12 +83,14 @@ function mostrarCotizacion(producto) {
    ============================================ */
   // ---- MENÚ HAMBURGUESA (Segunda opción, sin onclick) ----
     const hamburger = document.querySelector('.hamburger');
-    if (hamburger) {
+    const menu = document.querySelector('nav ul');
+    
+    if (hamburger && menu) {
         hamburger.addEventListener('click', function() {
-            const menu = document.querySelector('nav ul');
-            if (menu) {
-                menu.classList.toggle('show');
-           }
+            menu.classList.toggle('show');
+            console.log('Click detectado'); // Verás esto en la consola si funciona
         });
+    } else {
+        console.log('No se encontró el botón o el menú');
     }
 } // <-- Esta es la llave de cierre correcta
