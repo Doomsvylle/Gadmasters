@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ---- MENÚ HAMBURGUESA ----
     const hamburger = document.querySelector('.hamburger');
     
-
+ 
     if (hamburger && menu) {
         hamburger.addEventListener('click', function() {
             menu.classList.toggle('show');
@@ -89,4 +89,12 @@ function mostrarCotizacion(producto) {
             mensaje.value = `Me interesa cotizar el producto: ${producto}`;
         }
     }, 300);
+ // 🟢 Agregar listener específico para el botón "Ver equipos"
+    const btnVerEquipos = document.querySelector('.btn-p[data-tab="productos"]');
+    if (btnVerEquipos) {
+        btnVerEquipos.addEventListener('click', function(e) {
+            e.preventDefault();
+            mostrarTab('productos');
+        });
+    }
 }
