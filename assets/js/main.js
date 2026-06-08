@@ -1,31 +1,26 @@
-/* ============================================
-   PESTAÑAS
-   ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('[data-tab]');
     const tabs = document.querySelectorAll('.tab-content');
-    const heroSection = document.getElementById('heroSection');
-    const menu = document.querySelector('nav ul'); // Asegúrate de tener esta variable
-    const btnVerEquipos = document.querySelector('.btn-p[data-tab="productos"]');
- 
-    function mostrarTab(tabId) {
-        tabs.forEach(tab => tab.style.display = 'none');
-        //desaparece el menu principal
-        //if (heroSection) heroSection.style.display = 'none';
+    const menu = document.querySelector('nav ul');
 
+    function mostrarTab(tabId) {
+        // Ocultar todas las pestañas
+        tabs.forEach(tab => tab.style.display = 'none');
+
+        // Mostrar la pestaña seleccionada
         const tab = document.getElementById(tabId);
         if (tab) tab.style.display = 'block';
 
+        // Actualizar clase activa en el menú
         links.forEach(link => link.classList.remove('active'));
         const activeLink = document.querySelector(`[data-tab="${tabId}"]`);
         if (activeLink) activeLink.classList.add('active');
-         // 🟢 Cerrar el menú hamburguesa si está abierto
-        if (menu) {
-            menu.classList.remove('show');
-        }    
+
+        // Cerrar el menú hamburguesa
+        if (menu) menu.classList.remove('show');
     }
-    // Cerrar el menú hamburguesa después de seleccionar una opción
-    
+
+    // Listener para todos los enlaces con data-tab
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -34,20 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mostrar productos por defecto
-    //mostrarTab('productos');
+    // 🟢 Mostrar la pestaña "inicio" al cargar la página
+    mostrarTab('inicio');
 
     // ---- MENÚ HAMBURGUESA ----
     const hamburger = document.querySelector('.hamburger');
-    
- 
     if (hamburger && menu) {
         hamburger.addEventListener('click', function() {
             menu.classList.toggle('show');
-            console.log('✅ Click detectado - menú toggled');
         });
-    } else {
-        console.error('❌ No se encontró el botón o el menú');
     }
 });
 
@@ -90,11 +80,4 @@ function mostrarCotizacion(producto) {
             mensaje.value = `Me interesa cotizar el producto: ${producto}`;
         }
     }, 300);
- // 🟢 Agregar listener específico para el botón "Ver equipos"
-    if (btnVerEquipos) {
-        btnVerEquipos.addEventListener('click', function(e) {
-            e.preventDefault();
-            mostrarTab('productos');
-        });
-    }
 }
