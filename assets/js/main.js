@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.tab-content');
     const heroSection = document.getElementById('heroSection');
     const menu = document.querySelector('nav ul'); // Asegúrate de tener esta variable
-    
+    const btnVerEquipos = document.querySelector('.btn-p[data-tab="productos"]');
+ 
     function mostrarTab(tabId) {
         tabs.forEach(tab => tab.style.display = 'none');
         //desaparece el menu principal
@@ -90,8 +91,7 @@ function mostrarCotizacion(producto) {
         }
     }, 300);
  // 🟢 Agregar listener específico para el botón "Ver equipos"
-    const btnVerEquipos = document.querySelector('.btn-p[data-tab="productos"]');
-    if (btnVerEquipos) {
+   if (btnVerEquipos) {
         btnVerEquipos.addEventListener('click', function(e) {
             e.preventDefault();
             mostrarTab('productos');
