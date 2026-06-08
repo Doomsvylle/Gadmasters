@@ -91,7 +91,7 @@ function mostrarCotizacion(producto) {
         }
     }, 300);
  // 🟢 Agregar listener específico para el botón "Ver equipos"
-   if (btnVerEquipos) {
+    if (btnVerEquipos) {
         btnVerEquipos.addEventListener('click', function(e) {
             e.preventDefault();
             mostrarTab('productos');
