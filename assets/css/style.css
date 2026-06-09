@@ -756,6 +756,9 @@ nav ul a.active {
         max-width: 100%;
     }
     .hero-text .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: nowrap;  /* ← Cambiado de 'wrap' a 'nowrap' */ 
         justify-content: center;
     }
     .hero-text h1 {
@@ -819,6 +822,10 @@ footer img.flogo {
    RESPONSIVE
    ============================================ */
 @media(max-width:900px) {
+    .hero-text .hero-actions {
+        flex-wrap: wrap;  /* En móvil se apilan */
+        justify-content: center;
+    }
        .hamburger { display: flex; }
 
     nav ul {
