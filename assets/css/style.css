@@ -683,8 +683,12 @@ nav ul a.active {
 .hero-inicio .hero-img img {
     width: 100%;
     max-width: 340px;
-    animation: owlFloat 4s ease-in-out infinite;
-}
+    /*animation: owlFloat 4s ease-in-out infinite;quitarle el onfloat*/
+      display: block;
+    /* ⚠️ IMPORTANTE: Eliminar cualquier rastro de animación */
+    animation: none !important;
+    transform: none !important;
+    }
 
 /* Reutilizamos las clases ya existentes para el texto */
 .hero-inicio .eyebrow {
