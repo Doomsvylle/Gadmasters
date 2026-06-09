@@ -758,7 +758,7 @@ nav ul a.active {
     .hero-text .hero-actions {
         display: flex;
         gap: 14px;
-        flex-wrap: nowrap;  /* ← Cambiado de 'wrap' a 'nowrap' */ 
+        flex-wrap: wrap;  /* ← Cambiado de 'wrap' a 'nowrap' */ 
         justify-content: center;
     }
     .hero-text h1 {
