@@ -254,7 +254,7 @@ nav ul a.active {
 .hero-img img {
     width: 100%;
     max-width: 340px;
-     /* Eliminada la animación owlFloat */
+    /* Eliminada la animación owlFloat */
     /* animation: owlFloat 4s ease-in-out infinite; */
     display: block;
 }
