@@ -247,8 +247,6 @@ nav ul a.active {
     color: #fff;
 }
 .hero-img {
-    position: relative;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,7 +254,9 @@ nav ul a.active {
 .hero-img img {
     width: 100%;
     max-width: 340px;
-    animation: owlFloat 4s ease-in-out infinite;
+     /* Eliminada la animación owlFloat */
+    /* animation: owlFloat 4s ease-in-out infinite; */
+    display: block;
 }
 @keyframes owlFloat {
     0%,
@@ -645,13 +645,22 @@ nav ul a.active {
     background: var(--bg-primary);
     min-height: 90vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+     /* Escritorio: Video (1fr), Texto (1.5fr), Imagen (1fr) */
+    grid-template-columns: 1fr 1.5fr 1.5fr;
     align-items: center;
     padding: 80px 80px 60px;
-    gap: 60px;
+    gap: 30px;
     position: relative;
     overflow: hidden;
 }
+
+.hero-video video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
 .hero-inicio::before {
     content: '';
     position: absolute;
@@ -727,15 +736,26 @@ nav ul a.active {
         grid-template-columns: 1fr;
         padding: 50px 28px 40px;
         text-align: center;
+        gap: 20px;
     }
-    .hero-inicio .hero-img {
-        display: none;
+    .hero-video {
+        order: 2;                              /* Video abajo del texto */
+        margin-top: 20px;
     }
-    .hero-inicio h1 {
-        font-size: 3rem;
+    .hero-text {
+        order: 1;                              /* Texto arriba */
     }
-    .hero-inicio .hero-actions {
+    .hero-img {
+        display: none;                         /* Imagen oculta en móviles */
+    }
+    .hero-text .hero-sub {
+        max-width: 100%;
+    }
+    .hero-text .hero-actions {
         justify-content: center;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
     }
 }
 
