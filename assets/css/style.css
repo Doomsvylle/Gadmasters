@@ -167,6 +167,7 @@ nav ul a.active {
 .hero-text {
     position: relative;
     z-index: 1;
+    padding-left: 40px; /* Esto moverá el texto a la derecha */
 }
 .eyebrow {
     display: inline-block;
@@ -253,7 +254,7 @@ nav ul a.active {
 }
 .hero-img img {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     /* Eliminada la animación owlFloat */
     /* animation: owlFloat 4s ease-in-out infinite; */
     display: block;
@@ -646,7 +647,7 @@ nav ul a.active {
     min-height: 90vh;
     display: grid;
      /* Escritorio: Video (1fr), Texto (1.5fr), Imagen (1fr) */
-    grid-template-columns: 0.8fr 2fr 0.8fr;
+    grid-template-columns: 20% 60% 20%;
     align-items: center;
     padding: 80px 80px 60px;
     gap: 30px;
@@ -682,7 +683,7 @@ nav ul a.active {
 }
 .hero-inicio .hero-img img {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     /*animation: owlFloat 4s ease-in-out infinite;quitarle el onfloat*/
       display: block;
     /* ⚠️ IMPORTANTE: Eliminar cualquier rastro de animación */
