@@ -2,13 +2,8 @@
    VARIABLES - COLORES SEPARADOS
    ============================================ */
 :root {
-    /* COLOR DE FONDO PRINCIPAL */
     --bg-primary: #007fff;
-
-    /* COLOR DE TEXTO PRINCIPAL (el original) */
     --text-primary: #1a1f3c;
-
-    /* OTROS COLORES */
     --accent: #3d4fa0;
     --white: #ffffff;
     --offwhite: #f4f5f9;
@@ -33,7 +28,6 @@ html {
 body {
     font-family: 'Barlow', sans-serif;
     background: var(--offwhite);
-    /* El color de texto general es el original */
     color: var(--text-primary);
 }
 ::-webkit-scrollbar {
@@ -70,7 +64,6 @@ nav {
 .nav-logo img {
     height: 44px;
     object-fit: contain;
-    /* Invertir colores para que se vea blanco sobre azul */
     filter: brightness(0) invert(1);
 }
 nav ul {
@@ -143,153 +136,6 @@ nav ul a.active {
 }
 
 /* ============================================
-   HERO
-   ============================================ */
-.hero {
-    background: var(--bg-primary);
-    min-height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 80px 80px 60px;
-    gap: 60px;
-    position: relative;
-    overflow: hidden;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(61, 79, 160, .35) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 15% 80%, rgba(61, 79, 160, .18) 0%, transparent 60%);
-    pointer-events: none;
-}
-.hero-text {
-    position: relative;
-    z-index: 1;
-    padding-left: 40px; /* Esto moverá el texto a la derecha */
-}
-.eyebrow {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, .4);
-    border: 1px solid rgba(255, 255, 255, .14);
-    padding: 4px 12px;
-    margin-bottom: 20px;
-}
-.hero h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(3rem, 5vw, 5.5rem);
-    line-height: .95;
-    color: var(--white);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-.hero h1 em {
-    font-style: normal;
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255, 255, 255, .45);
-}
-.hero-sub {
-    color: rgba(255, 255, 255, .52);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.65;
-    max-width: 400px;
-    margin-bottom: 36px;
-}
-.hero-actions {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-.btn-p {
-    background: var(--white);
-    color: var(--text-primary);
-    padding: 14px 30px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: .9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
-    display: inline-block;
-}
-.btn-p:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
-}
-.btn-o {
-    background: transparent;
-    color: rgba(255, 255, 255, .7);
-    padding: 10px 20px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: .8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border: 1px solid rgba(255, 255, 255, .22);
-    cursor: pointer;
-    text-decoration: none;
-    transition: border-color .2s, color .2s;
-    display: inline-block;
-}
-.btn-o:hover {
-    border-color: rgba(255, 255, 255, .6);
-    color: #fff;
-}
-.hero-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero-img img {
-    width: 100%;
-    max-width: 400px;
-    /* Eliminada la animación owlFloat */
-    /* animation: owlFloat 4s ease-in-out infinite; */
-    display: block;
-}
-@keyframes owlFloat {
-    0%,
-    100% {
-        transform: translateY(0) rotate(-1deg);
-    }
-    50% {
-        transform: translateY(-14px) rotate(1deg);
-    }
-}
-.hero-stats {
-    display: flex;
-    gap: 40px;
-    margin-top: 48px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(255, 255, 255, .1);
-}
-.sv {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 2rem;
-    color: var(--white);
-}
-.sl {
-    font-size: .72rem;
-    color: rgba(255, 255, 255, .38);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 2px;
-}
-
-/* ============================================
    PESTAÑAS (CONTENIDO GENERAL)
    ============================================ */
 .hamburger {
@@ -298,7 +144,6 @@ nav ul a.active {
     cursor: pointer;
     gap: 4px;
 }
-
 .hamburger span {
     width: 25px;
     height: 3px;
@@ -312,7 +157,7 @@ nav ul a.active {
 }
 #inicio {
     background: var(--bg-primary);
-    padding: 0; /* Opcional, si quieres que ocupe todo el ancho */
+    padding: 0;
 }
 .tab-content .sh {
     margin-bottom: 30px;
@@ -646,7 +491,7 @@ nav ul a.active {
     background: var(--bg-primary);
     min-height: 90vh;
     display: grid;
-     /* Escritorio: Video (1fr), Texto (1.5fr), Imagen (1fr) */
+    /* Escritorio: Texto (20%), Video (60%), Imagen (20%) */
     grid-template-columns: 20% 60% 20%;
     align-items: center;
     padding: 80px 80px 60px;
@@ -654,17 +499,6 @@ nav ul a.active {
     position: relative;
     overflow: hidden;
 }
-
-/* 
-hero video antiguo para intro.mp4
-.hero-video video {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-*/
 .hero-inicio::before {
     content: '';
     position: absolute;
@@ -673,6 +507,31 @@ hero video antiguo para intro.mp4
         radial-gradient(ellipse 40% 40% at 15% 80%, rgba(61, 79, 160, .18) 0%, transparent 60%);
     pointer-events: none;
 }
+
+.hero-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
 .hero-inicio .hero-text {
     position: relative;
     z-index: 1;
@@ -687,14 +546,12 @@ hero video antiguo para intro.mp4
 .hero-inicio .hero-img img {
     width: 100%;
     max-width: 400px;
-    /*animation: owlFloat 4s ease-in-out infinite;quitarle el onfloat*/
-      display: block;
-    /* ⚠️ IMPORTANTE: Eliminar cualquier rastro de animación */
+    display: block;
     animation: none !important;
     transform: none !important;
-    }
+}
 
-/* Reutilizamos las clases ya existentes para el texto */
+/* Texto */
 .hero-inicio .eyebrow {
     display: inline-block;
     font-family: 'Barlow Condensed', sans-serif;
@@ -736,45 +593,11 @@ hero video antiguo para intro.mp4
     flex-wrap: nowrap;
 }
 
-
-
-/* Ajustes responsive para la pestaña inicio */
-@media(max-width:900px) {
-    .hero-inicio {
-        grid-template-columns: 1fr;
-        padding: 50px 28px 40px;
-        text-align: center;
-        gap: 20px;
-    }
-    .hero-video {
-        order: 2;                              /* Video abajo del texto */
-        margin-top: 20px;
-    }
-    .hero-text {
-        order: 1;                              /* Texto arriba */
-    }
-    .hero-img {
-        display: none;                         /* Imagen oculta en móviles */
-    }
-    .hero-text .hero-sub {
-        max-width: 100%;
-    }
-    .hero-text .hero-actions {
-        display: flex;
-        gap: 14px;
-        flex-wrap: nowrap;  /* ← Cambiado de 'wrap' a 'nowrap' */ 
-        justify-content: center;
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-}
-
 /* ============================================
    FOOTER
    ============================================ */
 footer {
-    background:  #2196f3;
+    background: #2196f3;
     padding: 28px 80px;
     display: flex;
     flex-direction: column;
@@ -800,7 +623,7 @@ footer img.flogo {
     flex-wrap: wrap;
 }
 .footer-links a {
-    color:  #fff;
+    color: #fff;
     text-decoration: none;
     font-size: .75rem;
     transition: opacity .2s;
@@ -821,20 +644,17 @@ footer img.flogo {
     height: 24px;
 }
 
-
 /* ============================================
    RESPONSIVE
    ============================================ */
 @media(max-width:900px) {
-    .hero-text .hero-actions {
-        flex-wrap: wrap;  /* En móvil se apilan */
-        justify-content: center;
+    .hamburger {
+        display: flex;
     }
-       .hamburger { display: flex; }
 
     nav ul {
-        display: none !important;        /* Oculto por defecto */
-        flex-direction: column !important;
+        display: none;
+        flex-direction: column;
         width: 100%;
         padding: 20px 20px;
         gap: 5px;
@@ -845,11 +665,9 @@ footer img.flogo {
         z-index: 300;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
-
     nav ul.show {
-        display: flex !important;        /* ✨ Forzamos que se muestre */
+        display: flex;
     }
-
     nav ul li {
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -871,62 +689,57 @@ footer img.flogo {
         color: #fff;
     }
 
-    /* Ajustes adicionales */
-    .hero { 
-        grid-template-columns: 1fr; 
-        padding: 50px 28px 40px; 
-        text-align: center; 
-    }
-    .hero-img { 
-        display: none; 
-    }
-    .hero h1 {
-         font-size: 3rem;
-         }
-    .hero-actions { 
-        justify-content: center;
-     }
-    .hero-stats { 
-        justify-content: center;
-     }
-    .tab-content { 
-        padding: 30px 16px;
-     }
-    .contacto-grid { 
+    /* Pestaña Inicio */
+    .hero-inicio {
         grid-template-columns: 1fr;
-         gap: 30px; 
-         padding: 20px;
-         }
-    footer {
-         padding: 20px 24px;
-         }
-    .footer-top { 
-        flex-direction: column; 
-        align-items: center;
-         text-align: center; }
-}
+        padding: 50px 28px 40px;
+        text-align: center;
+        gap: 20px;
+    }
+    .hero-inicio .hero-video {
+        order: 2;
+        margin-top: 20px;
+    }
+    .hero-inicio .hero-text {
+        order: 1;
+    }
+    /* El logo ahora se muestra en móvil */
+    .hero-inicio .hero-img {
+        display: flex;
+        order: 3;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .hero-inicio .hero-img img {
+        max-width: 200px;
+    }
+    .hero-inicio .hero-text .hero-sub {
+        max-width: 100%;
+    }
+    .hero-inicio .hero-text .hero-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .hero-inicio .hero-text h1 {
+        font-size: 2.5rem;
+    }
 
-/* Hacer que el iframe de YouTube ocupe el 100% de la columna */
-.hero-video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
+    /* General */
+    .tab-content {
+        padding: 30px 16px;
+    }
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+    footer {
+        padding: 20px 24px;
+    }
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
