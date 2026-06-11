@@ -645,6 +645,55 @@ footer img.flogo {
 }
 
 /* ============================================
+   BOTONES DE INICIO - FONDO BLANCO
+   ============================================ */
+
+/* Botón "Ver equipos" - Fondo blanco */
+.hero-inicio .btn-p {
+    background-color: #ffffff !important;
+    color: #1a1f3c !important;
+    padding: 14px 30px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    display: inline-block !important;
+    border: none !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.hero-inicio .btn-p:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.3) !important;
+}
+
+/* Botón "Catálogo 2026" - Borde blanco */
+.hero-inicio .btn-o {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    padding: 14px 30px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    display: inline-block !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s !important;
+}
+
+.hero-inicio .btn-o:hover {
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media(max-width:900px) {
@@ -742,4 +791,5 @@ footer img.flogo {
         align-items: center;
         text-align: center;
     }
+
 }
