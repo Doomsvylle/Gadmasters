@@ -255,10 +255,8 @@ nav ul a.active {
 }
 
 .hero-video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    order: 2;                    /* Último elemento */
+    margin-top: 20px;
 }
 .video-wrapper {
     position: relative;
@@ -279,9 +277,8 @@ nav ul a.active {
 }
 
 .hero-text {
-    position: relative;
-    z-index: 1;
-    padding-left: 40px;
+   order: 1;                    /* Después de la imagen */
+   padding-left: 0;
 }
 .hero-text .eyebrow {
     display: inline-block;
@@ -325,16 +322,14 @@ nav ul a.active {
 }
 
 .hero-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        display: flex;               /* La imagen aparece */
+        order: 0;                    /* La pone al principio */
+        justify-content: center;
+        margin-bottom: 20px;
 }
 .hero-img img {
+    max-width: 200px;            /* Tamaño controlado en móvil */
     width: 100%;
-    max-width: 400px;
-    display: block;
-    animation: none !important;
-    transform: none !important;
 }
 
 /* ============================================
