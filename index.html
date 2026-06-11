@@ -45,28 +45,40 @@
     <main id="mainContent">
 
         <!-- 🟢 Pestaña: Inicio (contenido del antiguo hero) -->
-        <section id="inicio" class="tab-content">
-            <div class="hero-inicio">
-                  <!-- Video a la izquierda (escritorio) / abajo (móvil) -->
-                
-                <div class="hero-text">
-                    <span class="eyebrow">Lima, Perú · Tecnología de confianza</span>
-                    <h1>Equipos que<br><em>elevan</em><br>tu nivel</h1>
-                    <p class="hero-sub">Computadoras de alto rendimiento para trabajo, estudio y gaming. Asesoría personalizada y soporte técnico especializado.</p>
-                    <div class="hero-actions">
-                        <a href="#" class="btn-p" data-tab="productos">Ver equipos →</a>
-                        <a href="docs/Catalogo.pdf" target="_blank" class="btn-o-dark">📄 Catálogo 2026</a>
-                    </div>
-                </div>
-                <div class="hero-video">
-                    <video src="assets/video/intro.mp4" controls autoplay loop muted playsinline></video>
-                </div>
-                <div class="hero-img">
-                    <img src="assets/img/gadmasters-logo.webp" alt="Gadmasters Owl" />
-                </div>
-            </div>
-        </section>
 
+        <!-- Pestaña: Inicio -->
+<section id="inicio" class="tab-content">
+    <div class="hero-inicio">
+        <!-- Video de YouTube a la izquierda -->
+        <div class="hero-video">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://youtu.be/2PuFyjAs7JA?si=jO2VtHElj7Em-s7b" 
+                    title="Video de introducción" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Texto en medio -->
+        <div class="hero-text">
+            <span class="eyebrow">Lima, Perú · Tecnología de confianza</span>
+            <h1>Equipos que<br><em>elevan</em><br>tu nivel</h1>
+            <p class="hero-sub">Computadoras de alto rendimiento para trabajo, estudio y gaming. Asesoría personalizada y soporte técnico especializado.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn-p" data-tab="productos">Ver equipos →</a>
+                <a href="docs/Catalogo.pdf" class="btn-o" target="_blank">Catálogo 2026</a>
+            </div>
+        </div>
+
+        <!-- Imagen estática a la derecha -->
+        <div class="hero-img">
+            <img src="assets/img/gadmasters-owl.webp" alt="Gadmasters Owl" />
+        </div>
+    </div>
+</section>
         <!-- Pestaña: Productos -->
         <section id="productos" class="tab-content" style="display:none;">
             <div class="sh">
