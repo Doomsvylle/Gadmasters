@@ -492,7 +492,7 @@ nav ul a.active {
     min-height: 90vh;
     display: grid;
     /* Escritorio: Texto (20%), Video (60%), Imagen (20%) */
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 25% 50% 25%;
     align-items: center;
     padding: 80px 80px 60px;
     gap: 30px;
