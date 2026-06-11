@@ -253,7 +253,7 @@ nav ul a.active {
 }
 .hero-img img {
     width: 100%;
-    max-width: 200px;
+    max-width: 350px;
     /* Eliminada la animación owlFloat */
     /* animation: owlFloat 4s ease-in-out infinite; */
     display: block;
@@ -682,7 +682,7 @@ nav ul a.active {
 }
 .hero-inicio .hero-img img {
     width: 100%;
-    max-width: 200px;
+    max-width: 350px;
     /*animation: owlFloat 4s ease-in-out infinite;quitarle el onfloat*/
       display: block;
     /* ⚠️ IMPORTANTE: Eliminar cualquier rastro de animación */
