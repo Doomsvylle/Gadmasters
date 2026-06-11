@@ -646,7 +646,7 @@ nav ul a.active {
     min-height: 90vh;
     display: grid;
      /* Escritorio: Video (1fr), Texto (1.5fr), Imagen (1fr) */
-    grid-template-columns: 1fr 1.5fr 1.5fr;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
     align-items: center;
     padding: 80px 80px 60px;
     gap: 30px;
