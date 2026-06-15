@@ -68,14 +68,22 @@
                     title="Video de introducción" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+                    allowfullscreen
+                    loading="lazy"> <!-- ← AGREGAR ESTO -->
                 </iframe>
             </div>
         </div>
 
         <!-- Logo a la derecha -->
         <div class="hero-img">
-            <img src="assets/img/gadmasters-logo.webp" alt="Gadmasters Logo" />
+             <img 
+        src="assets/img/gadmasters-logo.webp" 
+        alt="Gadmasters Logo" 
+        width="400" 
+        height="auto" 
+        fetchpriority="high" 
+        loading="eager" 
+    />
         </div>
     </div>
 </section>
