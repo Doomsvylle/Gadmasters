@@ -875,4 +875,42 @@ footer img.flogo {
         align-items: center;
         text-align: center;
     }
+/* ============================================
+   MODAL PARA PRODUCTOS
+   ============================================ */
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    }
+
+    .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    .close:hover {
+    color: #bbb;
+    }
 }

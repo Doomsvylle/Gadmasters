@@ -81,3 +81,25 @@ function mostrarCotizacion(producto) {
         }
     }, 300);
 }
+
+/* ============================================
+   MODAL DE IMÁGENES
+   ============================================ */
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalImg');
+    const images = document.querySelectorAll('.product-img');
+
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            // Usa la imagen grande (data-full) o la normal si no existe
+            const srcFull = this.getAttribute('data-full') || this.src;
+            modal.style.display = 'flex';
+            modalImg.src = srcFull;
+        });
+    });
+});
+
+function closeModal() {
+    document.getElementById('productModal').style.display = 'none';
+}

@@ -88,52 +88,118 @@
     </div>
 </section>
         <!-- Pestaña: Productos -->
-        <section id="productos" class="tab-content" style="display:none;">
-            <div class="sh">
-                <p class="slabel">Nuestros equipos</p>
-                <h2 class="stitle">Encuentra tu<br>máquina ideal</h2>
+       <section id="productos" class="tab-content">
+    <div class="sh">
+        <p class="slabel">Nuestros equipos</p>
+        <h2 class="stitle">Encuentra tu<br>máquina ideal</h2>
+    </div>
+    <div class="grid">
+        <!-- PRODUCTO 1 -->
+        <div class="card">
+            <div class="cimg">
+                <img 
+                    src="assets/img/productos/workpro.jpg" 
+                    alt="WorkPro Elite 15" 
+                    class="product-img" 
+                    data-full="assets/img/productos/workpro-full.jpg" 
+                    loading="lazy"
+                />
+                <span class="btag tnew">Nuevo</span>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <div class="cimg"><span class="btag tnew">Nuevo</span><svg class="cicon" viewBox="0 0 90 70" fill="none"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="3"/><rect x="11" y="11" width="68" height="36" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="28" y="54" width="34" height="5" rx="1" fill="white"/><rect x="16" y="59" width="58" height="3" rx="1.5" fill="white"/></svg></div>
-                    <div class="cbody">
-                        <p class="ccat">Laptop · Trabajo / Diseño</p>
-                        <p class="cname">WorkPro Elite 15"</p>
-                        <p class="cspecs">Intel Core i7 12va Gen · 16GB RAM<br>512GB SSD NVMe · Win 11 Pro · FHD IPS</p>
-                        <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="mostrarCotizacion('WorkPro Elite 15')">Cotizar</button></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cimg"><span class="btag thot">Popular</span><svg class="cicon" viewBox="0 0 90 80" fill="none"><rect x="22" y="3" width="46" height="54" rx="3" stroke="white" stroke-width="3"/><rect x="29" y="10" width="32" height="28" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="30" y="57" width="30" height="4" rx="1" fill="white"/><rect x="8" y="61" width="74" height="4" rx="2" fill="white"/><rect x="10" y="65" width="14" height="10" rx="2" fill="white"/><rect x="66" y="65" width="14" height="10" rx="2" fill="white"/><rect x="24" y="68" width="42" height="7" rx="2" fill="white"/></svg></div>
-                    <div class="cbody">
-                        <p class="ccat">PC Desktop · Gaming / Productividad</p>
-                        <p class="cname">GadStation X500</p>
-                        <p class="cspecs">AMD Ryzen 5 5600X · 16GB DDR5<br>GTX 1650 4GB · 1TB SSD · Gabinete RGB</p>
-                        <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="mostrarCotizacion('GadStation X500')">Cotizar</button></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cimg"><svg class="cicon" viewBox="0 0 90 70" fill="none"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="3"/><rect x="11" y="11" width="68" height="36" rx="1" fill="rgba(255,255,255,0.1)"/><rect x="28" y="54" width="34" height="5" rx="1" fill="white"/><rect x="16" y="59" width="58" height="3" rx="1.5" fill="white"/><circle cx="45" cy="29" r="10" stroke="white" stroke-width="2"/></svg></div>
-                    <div class="cbody">
-                        <p class="ccat">Laptop · Estudio / Oficina</p>
-                        <p class="cname">StudyBook 14"</p>
-                        <p class="cspecs">Intel Core i5 12va Gen · 8GB RAM<br>256GB SSD · Win 11 Home · Ligera 1.5kg</p>
-                        <div class="cfoot"><span class="cprice">Consultar</span><button class="bcot" onclick="mostrarCotizacion('StudyBook 14')">Cotizar</button></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cimg"><span class="btag tsoon">Próximamente</span><svg class="cicon" viewBox="0 0 90 70" fill="none" opacity="0.4"><rect x="4" y="4" width="82" height="50" rx="4" stroke="white" stroke-width="2.5" stroke-dasharray="6 4"/></svg></div>
-                    <div class="cbody">
-                        <p class="ccat">Especificaciones en desarrollo</p>
-                        <p class="cname">Nuevo Modelo</p>
-                        <p class="cspecs">Próxima incorporación al catálogo.<br>Escríbenos para recibir notificación.</p>
-                        <div class="cfoot"><span class="cprice">Pronto</span><button class="bcot" onclick="mostrarCotizacion('nuevo modelo')">Avisar</button></div>
-                    </div>
+            <div class="cbody">
+                <p class="ccat">Laptop · Trabajo / Diseño</p>
+                <p class="cname">WorkPro Elite 15"</p>
+                <p class="cspecs">Intel Core i7 12va Gen · 16GB RAM<br>512GB SSD NVMe · Win 11 Pro · FHD IPS</p>
+                <div class="cfoot">
+                    <span class="cprice">Consultar</span>
+                    <button class="bcot" onclick="mostrarCotizacion('WorkPro Elite 15')">Cotizar</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Pestaña: Ofertas -->
+        <!-- PRODUCTO 2 -->
+        <div class="card">
+            <div class="cimg">
+                <img 
+                    src="assets/img/productos/gadstation.jpg" 
+                    alt="GadStation X500" 
+                    class="product-img" 
+                    data-full="assets/img/productos/gadstation-full.jpg" 
+                    loading="lazy"
+                />
+                <span class="btag thot">Popular</span>
+            </div>
+            <div class="cbody">
+                <p class="ccat">PC Desktop · Gaming / Productividad</p>
+                <p class="cname">GadStation X500</p>
+                <p class="cspecs">AMD Ryzen 5 5600X · 16GB DDR5<br>GTX 1650 4GB · 1TB SSD · Gabinete RGB</p>
+                <div class="cfoot">
+                    <span class="cprice">Consultar</span>
+                    <button class="bcot" onclick="mostrarCotizacion('GadStation X500')">Cotizar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 3 -->
+        <div class="card">
+            <div class="cimg">
+                <img 
+                    src="assets/img/productos/studybook.jpg" 
+                    alt="StudyBook 14" 
+                    class="product-img" 
+                    data-full="assets/img/productos/studybook-full.jpg" 
+                    loading="lazy"
+                />
+            </div>
+            <div class="cbody">
+                <p class="ccat">Laptop · Estudio / Oficina</p>
+                <p class="cname">StudyBook 14"</p>
+                <p class="cspecs">Intel Core i5 12va Gen · 8GB RAM<br>256GB SSD · Win 11 Home · Ligera 1.5kg</p>
+                <div class="cfoot">
+                    <span class="cprice">Consultar</span>
+                    <button class="bcot" onclick="mostrarCotizacion('StudyBook 14')">Cotizar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCTO 4 -->
+        <div class="card">
+            <div class="cimg">
+                <img 
+                    src="assets/img/productos/placeholder.jpg" 
+                    alt="Nuevo Modelo" 
+                    class="product-img" 
+                    data-full="assets/img/productos/placeholder-full.jpg" 
+                    loading="lazy"
+                />
+                <span class="btag tsoon">Próximamente</span>
+            </div>
+            <div class="cbody">
+                <p class="ccat">Especificaciones en desarrollo</p>
+                <p class="cname">Nuevo Modelo</p>
+                <p class="cspecs">Próxima incorporación al catálogo.<br>Escríbenos para recibir notificación.</p>
+                <div class="cfoot">
+                    <span class="cprice">Pronto</span>
+                    <button class="bcot" onclick="mostrarCotizacion('nuevo modelo')">Avisar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+   MODAL PARA AMPLIAR IMÁGENES
+   ============================================ -->
+<div id="productModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg" />
+</div>
+        <!-- En el NAV (menú), comenta o elimina esta línea: -->
+<!-- <li><a href="#" data-tab="ofertas">Ofertas</a></li> -->
+
+<!-- En el MAIN, comenta todo el bloque de ofertas: -->
+<!--
+        
         <section id="ofertas" class="tab-content" style="display:none;">
             <h2 class="tab-title">🔥 Ofertas especiales</h2>
             <div class="ofertas-grid">
@@ -154,7 +220,7 @@
                 </div>
             </div>
         </section>
-
+ -->
         <!-- Pestaña: Servicios -->
         <section id="servicios" class="tab-content" style="display:none;">
             <h2 class="tab-title">🛠️ Nuestros servicios</h2>
