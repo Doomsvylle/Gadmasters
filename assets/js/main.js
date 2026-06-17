@@ -103,3 +103,26 @@ document.addEventListener('DOMContentLoaded', function() {
 function closeModal() {
     document.getElementById('productModal').style.display = 'none';
 }
+
+/* ============================================
+   ABRIR TAWK.TO AL HACER CLIC EN EL LOGO
+   ============================================ */
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.querySelector('.nav-logo img');
+    if (logo && window.Tawk_API) {
+        logo.addEventListener('click', function() {
+            // Abre el chat de Tawk.to
+            Tawk_API.toggle();
+        });
+    } else {
+        // Esperar a que Tawk.to cargue si aún no está disponible
+        const checkTawk = setInterval(() => {
+            if (window.Tawk_API) {
+                clearInterval(checkTawk);
+                document.querySelector('.nav-logo img').addEventListener('click', function() {
+                    Tawk_API.toggle();
+                });
+            }
+        }, 500);
+    }
+});
