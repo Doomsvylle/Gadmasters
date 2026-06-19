@@ -914,9 +914,18 @@ footer img.flogo {
     color: #bbb;
     }
 }
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+
+/* ============================================
+   ELIMINACIÓN FORZADA DE BARRA HORIZONTAL
+   ============================================ */
+html {
+    width: 100%;
+    overflow-x: hidden !important;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden !important;
     margin: 0;
     padding: 0;
 }
