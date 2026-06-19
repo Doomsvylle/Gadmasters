@@ -949,3 +949,22 @@ footer {
     height: 100% !important;
     overflow: hidden !important;
 }
+
+/* ============================================
+   CORRECCIÓN DEFINITIVA DEL FOOTER
+   ============================================ */
+footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 80px !important;
+    box-sizing: border-box !important; /* ¡Esto hace que el padding no se salga! */
+    overflow: hidden !important;
+    margin: 0 !important;
+    
+    /* El resto de tus estilos */
+    background: #2196f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
