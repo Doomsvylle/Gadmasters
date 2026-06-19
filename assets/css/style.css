@@ -918,3 +918,9 @@ footer img.flogo {
         color: #bbb;
     }
 }
+
+#tawkchat-minified-wrapper,
+#tawkchat-iframe-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+}
